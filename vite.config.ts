@@ -10,7 +10,7 @@ export default defineConfig({
       insertTypesEntry: true,
       tsconfigPath: './tsconfig.json',
       entryRoot: 'src',
-      exclude: ['tests/**', '**/*.stories.ts', '**/*.spec.ts'],
+      exclude: ['tests/**', '**/*.stories.ts', '**/*.spec.ts', 'src/vite-env.d.ts'],
       outDir: 'dist',
     }),
   ],

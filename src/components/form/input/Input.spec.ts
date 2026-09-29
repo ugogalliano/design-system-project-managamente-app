@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import { defineRule } from 'vee-validate'
 import { z } from 'zod'
-import { flushPromises, mountWithForm, toTypedSchema } from '../../../tests/utils'
+import { flushPromises, mountWithForm, toTypedSchema } from '../../../../tests/utils.ts'
 import Input from './Input.vue'
 
 defineRule('required', (value: unknown) => {
