@@ -1,3 +1,5 @@
+import './tokens/index.css'
+
 export * from './lib/utils'
 
 export type { ClassValue } from 'clsx'

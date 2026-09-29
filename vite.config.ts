@@ -9,6 +9,8 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       tsconfigPath: './tsconfig.json',
+      entryRoot: 'src',
+      exclude: ['tests/**', '**/*.stories.ts', '**/*.spec.ts'],
       outDir: 'dist',
     }),
   ],
