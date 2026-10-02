@@ -134,25 +134,31 @@ export const FullForm: Story = {
       const initialValues = { active: false, notify: false, terms: false }
       const submitted = ref<Record<string, unknown> | null>(null)
 
-      const { handleSubmit } = useForm({
+      const { handleSubmit, errors } = useForm({
         initialValues,
         validationSchema: schema,
       })
 
-      const onSubmit = handleSubmit(values => {
-        submitted.value = values
-      })
+      const onSubmit = handleSubmit(
+        values => {
+          submitted.value = values
+          console.log('SUBMITTED')
+        },
+        ({ errors }) => {
+          console.log('[VALIDATION ERRORS]', errors)
+        }
+      )
 
       const submitClasses = cn(
         'h-10 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow-sm transition-colors',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background'
       )
 
-      return { submitted, onSubmit, submitClasses }
+      return { submitted, onSubmit, submitClasses, errors }
     },
     template: `
-      <form class="flex w-96 flex-col gap-4" @submit="onSubmit">
-        <Checkbox name="active" label="Progetto attivo" />
+    <form novalidate class="flex w-96 flex-col gap-4" @submit.prevent="onSubmit">        
+      <Checkbox name="active" label="Progetto attivo" />
         <Checkbox
           name="notify"
           label="Notifica i referenti"
@@ -160,6 +166,9 @@ export const FullForm: Story = {
         />
         <Checkbox name="terms" label="Accetto i termini di servizio" required />
         <button type="submit" :class="submitClasses" data-slot="form-submit">Invia</button>
+        <pre
+          class="rounded-md bg-muted p-3 text-xs text-muted-foreground"
+        >{{ JSON.stringify(errors, null, 2) }}</pre>
         <pre
           v-if="submitted"
           class="rounded-md bg-muted p-3 text-xs text-muted-foreground"
