@@ -35,16 +35,28 @@
     "build-storybook": "storybook build",
     "lint": "eslint . --fix",
     "format": "prettier --write \"src/**/*.{ts,vue,css}\" \"tests/**/*.{ts,vue}\"",
+    "commitlint": "commitlint --edit",
+    "prepare": "husky",
     "prepublishOnly": "pnpm run build"
   },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,json}": [
+      "prettier --write"
+    ]
+  },
   "peerDependencies": {
-    "vue": "^3.4.0",
+    "@vee-validate/zod": "^4.13.0",
     "reka-ui": "^2.0.0",
     "vee-validate": "^4.13.0",
-    "zod": "^3.23.0",
-    "@vee-validate/zod": "^4.13.0"
+    "vue": "^3.4.0",
+    "zod": "^3.23.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
     "@eslint/js": "^9.10.0",
     "@storybook/addon-a11y": "8.6.18",
     "@storybook/addon-essentials": "8.6.18",
@@ -62,7 +74,9 @@
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.28.0",
+    "husky": "^9.1.7",
     "jsdom": "^25.0.0",
+    "lint-staged": "^15.5.2",
     "postcss": "^8.4.45",
     "prettier": "^3.3.0",
     "reka-ui": "^2.0.0",
