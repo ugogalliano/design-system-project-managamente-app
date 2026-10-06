@@ -1,6 +1,6 @@
 {
   "name": "@ugogalliano/pm-design-system-vue",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Design System Vue 3 per Project Management",
   "type": "module",
   "packageManager": "pnpm@10.26.1",
