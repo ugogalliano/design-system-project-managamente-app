@@ -11,7 +11,7 @@ defineRule('required', (value: unknown) => {
 
 const emailSchema = toTypedSchema(
   z.object({
-    email: z.string().min(1, 'Campo obbligatorio').email('Email non valida'),
+    email: z.string().min(1, 'Campo obbligatorio').check(z.email('Email non valida')),
   })
 )
 

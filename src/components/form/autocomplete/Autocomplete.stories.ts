@@ -158,7 +158,10 @@ export const FullForm: Story = {
       const schema = toTypedSchema(
         z.object({
           project: z.string().min(1, 'Il progetto è obbligatorio'),
-          owner: z.string().min(1, 'Il referente è obbligatorio').email('Email non valida'),
+          owner: z
+            .string()
+            .min(1, 'Il referente è obbligatorio')
+            .check(z.email('Email non valida')),
         })
       )
       const initialValues = {

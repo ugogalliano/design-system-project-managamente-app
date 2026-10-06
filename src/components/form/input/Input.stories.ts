@@ -112,7 +112,10 @@ export const WithDescription: Story = {
 
 const emailSchema = toTypedSchema(
   z.object({
-    email: z.string().min(1, 'Campo obbligatorio').email('Inserisci un indirizzo email valido'),
+    email: z
+      .string()
+      .min(1, 'Campo obbligatorio')
+      .check(z.email('Inserisci un indirizzo email valido')),
   })
 )
 
@@ -134,7 +137,7 @@ export const FullForm: Story = {
       const schema = toTypedSchema(
         z.object({
           projectName: z.string().min(1, 'Il nome del progetto è obbligatorio'),
-          ownerEmail: z.string().min(1, 'Campo obbligatorio').email('Email non valida'),
+          ownerEmail: z.string().min(1, 'Campo obbligatorio').check(z.email('Email non valida')),
           budget: z.string().min(1, 'Campo obbligatorio'),
         })
       )

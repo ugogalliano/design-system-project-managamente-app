@@ -56,11 +56,11 @@
     ]
   },
   "peerDependencies": {
-    "@vee-validate/zod": "^4.13.0",
+    "@vee-validate/zod": "^4.15.1",
     "reka-ui": "^2.0.0",
-    "vee-validate": "^4.13.0",
+    "vee-validate": "^4.15.1",
     "vue": "^3.4.0",
-    "zod": "^3.23.0"
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.1",
@@ -74,7 +74,7 @@
     "@storybook/vue3": "8.6.18",
     "@storybook/vue3-vite": "8.6.18",
     "@types/node": "^22.5.0",
-    "@vee-validate/zod": "^4.13.0",
+    "@vee-validate/zod": "^4.15.1",
     "@vitejs/plugin-vue": "^5.1.0",
     "@vue/test-utils": "^2.4.0",
     "autoprefixer": "^10.4.20",
@@ -93,13 +93,13 @@
     "tailwindcss": "^3.4.10",
     "typescript": "^5.6.0",
     "typescript-eslint": "^8.6.0",
-    "vee-validate": "^4.13.0",
+    "vee-validate": "^4.15.1",
     "vite": "^5.4.0",
     "vite-plugin-dts": "^4.2.0",
     "vitest": "^2.1.0",
     "vue": "^3.5.0",
     "vue-tsc": "^2.1.0",
-    "zod": "^3.23.0"
+    "zod": "^4.6.5"
   },
   "engines": {
     "node": ">=20.0.0"
