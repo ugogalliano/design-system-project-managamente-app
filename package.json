@@ -9,7 +9,8 @@
     "url": "git+https://github.com/ugogalliano/design-system-project-managamente-app.git"
   },
   "files": [
-    "dist"
+    "dist",
+    "tailwind.preset.mjs"
   ],
   "exports": {
     ".": {
@@ -17,7 +18,9 @@
       "import": "./dist/pm-design-system.js",
       "require": "./dist/pm-design-system.umd.cjs"
     },
-    "./style.css": "./dist/style.css"
+    "./tailwind-preset": "./tailwind.preset.mjs",
+    "./tokens.css": "./dist/tokens.css",
+    "./style.css": "./dist/tokens.css"
   },
   "types": "./dist/index.d.ts",
   "sideEffects": [

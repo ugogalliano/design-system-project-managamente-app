@@ -1,4 +1,4 @@
-import './tokens/index.css'
+import './tokens/variables.css'
 
 export * from './lib/utils'
 

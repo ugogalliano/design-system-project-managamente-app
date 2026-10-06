@@ -37,7 +37,7 @@ export default defineConfig({
           '@vee-validate/zod': 'VeeValidateZod',
         },
         assetFileNames: assetInfo => {
-          if (assetInfo.name === 'style.css') return 'style.css'
+          if (assetInfo.name === 'style.css') return 'tokens.css'
           return assetInfo.name ?? '[name][extname]'
         },
       },
