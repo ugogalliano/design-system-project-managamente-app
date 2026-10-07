@@ -46,7 +46,7 @@ jobs:
             found { print }
           ' CHANGELOG.md > RELEASE_NOTES.md
           if [ -s RELEASE_NOTES.md ]; then
-            gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --notes-file RELEASE_NOTES.md
+            gh release create "$GITHUB_REF_NAME" --title "[Release] Version Packages $GITHUB_REF_NAME" --notes-file RELEASE_NOTES.md
           else
-            gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
+            gh release create "$GITHUB_REF_NAME" --title "[Release] Version Packages $GITHUB_REF_NAME" --generate-notes
           fi

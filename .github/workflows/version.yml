@@ -23,9 +23,17 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Compute next version
+        id: next-version
+        run: |
+          pnpm exec changeset status --output=status.json || true
+          VERSION=$(node -p "require('./status.json').releases?.[0]?.newVersion ?? ''" 2>/dev/null || true)
+          if [ -n "$VERSION" ]; then
+            echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+          fi
       - uses: changesets/action@v1
         with:
-          commit: '[Release] Version Packages'
-          title: '[Release] Version Packages'
+          commit: '[Release] Version Packages ${{ steps.next-version.outputs.tag }}'
+          title: '[Release] Version Packages ${{ steps.next-version.outputs.tag }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
