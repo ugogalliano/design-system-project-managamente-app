@@ -39,6 +39,9 @@
   /* Radius */
   --radius: 0.75rem;
 
+  /* Overlay */
+  --overlay: 60 5% 7%;
+
   /* Success */
   --success: 96 13% 33%;
   --success-foreground: 90 23% 91%;
