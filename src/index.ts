@@ -9,3 +9,4 @@ export { default as Autocomplete } from './components/form/autocomplete/Autocomp
 export { default as Checkbox } from './components/form/checkbox/Checkbox.vue'
 export { default as RadioGroup } from './components/form/radio-group/RadioGroup.vue'
 export { default as Dialog } from './components/feedback/dialog/Dialog.vue'
+export { default as Badge } from './components/ui/badge/Badge.vue'
